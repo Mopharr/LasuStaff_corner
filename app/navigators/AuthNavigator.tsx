@@ -1,9 +1,12 @@
 import React from "react"
-import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack"
+import {NavigatorScreenParams} from "@react-navigation/native"
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { HomeNavigator, HomeNavigatorParamList } from "./HomeNavigator"
 
 import {
   GetStarted,
+  HomePage,
   Login,
   SignUp,
 } from "../screens"
@@ -15,7 +18,8 @@ export type AuthNavigatorParamList = {
   login: undefined
   getStarted: undefined
   signUp: undefined
-  Home: NativeStackScreenProps<HomeNavigatorParamList>
+  HomePage: undefined
+  Home: NavigatorScreenParams<HomeNavigatorParamList>
 }
 
 export type AuthTabScreenProps<T extends keyof AuthNavigatorParamList> = CompositeScreenProps<
@@ -35,6 +39,7 @@ export const AuthNavigator = () => {
       <Stack.Screen name="getStarted" component={GetStarted} />
       <Stack.Screen name="login" component={Login} />
       <Stack.Screen name="signUp" component={SignUp} />
+      <Stack.Screen name="HomePage" component={HomePage} />
       <Stack.Screen name="Home" component={HomeNavigator} />
     </Stack.Navigator>
   )

@@ -11,5 +11,5 @@ function IgniteApp() {
   return <App hideSplashScreen={RNBootSplash.hide} />
 }
 
-AppRegistry.registerComponent("HelloWorld", () => IgniteApp)
+AppRegistry.registerComponent(IgniteApp)
 export default App

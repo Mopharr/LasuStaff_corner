@@ -1,26 +1,28 @@
+
+
 import React from "react"
+// import {NavigatorScreenParams} from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { CompositeScreenProps, NavigatorScreenParams } from "@react-navigation/native"
-import { BottomTabScreenProps } from "@react-navigation/bottom-tabs"
-// import { LoginScreen } from "../screens"
-import { AppStackParamList, AppStackScreenProps } from "./AppNavigator"
 import { HomePage, Notification, Overview } from "../screens"
-import { AuthNavigator, AuthNavigatorParamList } from "./AuthNavigator"
-// import  from "app/screens/ClassScreen/Profile"
+import { CompositeScreenProps } from "@react-navigation/core"
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs"
+import { AppStackParamList, AppStackScreenProps } from "."
+// import { AuthNavigator, AuthNavigatorParamList } from "./AuthNavigator"
+
 
 export type HomeNavigatorParamList = {
   HomePage: undefined
   Overview: undefined
   Notification: undefined
-  Auth: NavigatorScreenParams<AuthNavigatorParamList>
+  // Auth: NavigatorScreenParams<AuthNavigatorParamList>
 }
 
-export type HomeScreenProps<T extends keyof HomeNavigatorParamList> = CompositeScreenProps<
+export type HomeTabScreenProps<T extends keyof HomeNavigatorParamList> = CompositeScreenProps<
   BottomTabScreenProps<HomeNavigatorParamList, T>,
   AppStackScreenProps<keyof AppStackParamList>
 >
-const Stack = createNativeStackNavigator<HomeNavigatorParamList>()
 
+const Stack = createNativeStackNavigator<HomeNavigatorParamList>()
 export const HomeNavigator = () => {
   return (
     <Stack.Navigator
@@ -32,7 +34,7 @@ export const HomeNavigator = () => {
       <Stack.Screen name="HomePage" component={HomePage} />
       <Stack.Screen name="Overview" component={Overview} />
       <Stack.Screen name="Notification" component={Notification} />
-      <Stack.Screen name="Auth" component={AuthNavigator} />
+      {/* <Stack.Screen name="Auth" component={AuthNavigator} /> */}
     </Stack.Navigator>
   )
 }

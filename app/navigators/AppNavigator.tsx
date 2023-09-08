@@ -39,7 +39,7 @@ export type AppStackParamList = {
   Welcome: undefined
   Login: undefined // @demo remove-current-line
   Auth: NavigatorScreenParams<AuthNavigatorParamList>
-  Home: NativeStackScreenProps<HomeNavigatorParamList>
+  Home: NavigatorScreenParams<HomeNavigatorParamList>
 }
 
 /**

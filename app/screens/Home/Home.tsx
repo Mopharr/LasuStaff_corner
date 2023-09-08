@@ -45,8 +45,8 @@ const image = [
   },
 ]
 
-export const HomePage: FC<HomeScreenProps> = function HomePage(_props) {
-  const { navigation } = _props
+export const HomePage: FC<HomeScreenProps> = function HomePage(props) {
+  const { navigation } = props
 
   return (
     <Screen preset="fixed" safeAreaEdges={["top"]} contentContainerStyle={$screenContentContainer}>
